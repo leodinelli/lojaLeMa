@@ -1,1 +1,21 @@
-<p>vitrine works!</p>
+<h3>Bem vindos</h3>
+<div class="alert alert-info" *ngIf="mensagem.length>0">
+    {{mensagem}}
+</div>
+
+<div class="row">
+
+    <div class="col-3" *ngFor="let obj of lista">
+
+        <h4>{{obj.nome}}</h4>
+
+        <img src="foto{{obj.codigo}}.jpg" height="150px"><br>
+        R$ {{obj.valor}} <br><br>
+
+        <div *ngIf="obj.quantidade<=0" class="fw-bold">Sem Estoque</div>
+
+        <button class="btn btn-success">detalhes</button>
+
+    </div> 
+
+</div>
