@@ -1,0 +1,12 @@
+<h3>Cadastro de Cliente</h3>
+
+<div class="alert alert-success">{{mensagem}}</div>
+nome: <input type="text" [(ngModel)] ="obj.nome"><br>
+email: <input type="text" [(ngModel)] ="obj.email"><br>
+logradouro: <textarea type="text" [(ngModel)] ="obj.logradouro"></textarea><br>
+senha: <input type="password" [(ngModel)] ="obj.senha"><br>
+telefone: <input type="text" [(ngModel)] ="obj.telefone"><br>
+documento: <input type="text" [(ngModel)] ="obj.documento"><br>
+
+<button class="btn btn-success" (click)="gravar()">Gravar</button>
+
