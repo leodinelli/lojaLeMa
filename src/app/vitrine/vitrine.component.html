@@ -1,21 +1,35 @@
-<h3>Bem vindos</h3>
-<div class="alert alert-info" *ngIf="mensagem.length>0">
-    {{mensagem}}
-</div>
+<div class="container mt-5">
+  <h3 class="text-center">Bem-vindos</h3>
 
-<div class="row">
+  <div class="alert alert-info text-center" *ngIf="mensagem.length > 0">
+    {{ mensagem }}
+  </div>
 
-    <div class="col-3" *ngFor="let obj of lista">
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let obj of lista">
+      <div class="card p-3 shadow-sm h-100">
+        <h4 class="text-center">{{ obj.nome }}</h4>
 
-        <h4>{{obj.nome}}</h4>
+        <img
+          src="foto{{ obj.codigo }}.jpg"
+          class="card-img-top mb-3"
+          alt="{{ obj.nome }}"
+          height="150px"
+        />
 
-        <img src="foto{{obj.codigo}}.jpg" height="150px"><br>
-        R$ {{obj.valor}} <br><br>
+        <p class="text-center fw-bold">R$ {{ obj.valor }}</p>
 
-        <div *ngIf="obj.quantidade<=0" class="fw-bold">Sem Estoque</div>
+        <div *ngIf="obj.quantidade <= 0" class="text-center text-danger fw-bold">
+          Sem Estoque
+        </div>
 
-        <button class="btn btn-success" (click)="verDetalhe(obj)">detalhes</button>
-
-    </div> 
-
+        <button
+          class="btn btn-success w-100 mt-2"
+          (click)="verDetalhe(obj)"
+        >
+          Detalhes
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

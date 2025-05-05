@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detalhe',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detalhe.component.html',
   styleUrl: './detalhe.component.css'
 })
